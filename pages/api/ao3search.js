@@ -6,10 +6,21 @@ searchInput.onsubmit = searchStory
 searchButton.onclick = searchStory;
 
 async function searchStory() {
-	var searchResult = await fetch("https://api.kiwiandoesthings.place/getao3storyid?storyTitle=" + searchInput.value);
+	searchResults.innerHTML = "Search results are loading...";
+	try {
+		var searchResult = await fetch("https://api.kiwiandoesthings.place/getao3storyid?storyTitle=" + searchInput.value);
+		if (!searchResult.ok) {
+            searchResults.innerHTML = "Failed to fetch search results with error \"" + searchResult.status + "\". Please retry. If the issue persists, message @KiwianDoesThings on Discord with the error message.";
+            return; 
+        }
+	} catch (error) {
+		searchResults.innerHTML = "Failed to fetch search results with error \"" + error + "\". Please retry. If the issue persists, message @KiwianDoesThings on Discord with the error message.";
+		return;
+	}
 	var json = await searchResult.json();
 	console.log(json);
 
+	searchResults.innerHTML = "";
 	Object.entries(json).forEach(([id, info]) => {
         const div = document.createElement('li');
             

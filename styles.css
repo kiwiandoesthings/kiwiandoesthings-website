@@ -54,6 +54,10 @@ img {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.ao3-text {
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif, "GNU Unifont"
+}
+
 .button {
   border: 3px double #e06fff;
   box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.4);
