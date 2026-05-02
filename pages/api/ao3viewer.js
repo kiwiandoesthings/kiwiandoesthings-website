@@ -1,6 +1,7 @@
 var storyView = document.getElementById("ao3-story-view");
 var storyTitle = document.getElementById("ao3-story-title");
 var storyAdvance = document.getElementById("ao3-story-advance");
+var storyDevance = document.getElementById("ao3-story-devance");
 var queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 var storyId = urlParams.get('storyID');
@@ -26,4 +27,11 @@ loadStory();
 
 storyAdvance.onclick = () => {
 	window.location = "ao3storyviewer.html?storyID=" + storyId + "&page=" + (parseInt(pageNum) + 1);
+};
+
+storyDevance.onclick = () => {
+	if (parseInt(pageNum) == 0) {
+		return;
+	}
+	window.location = "ao3storyviewer.html?storyID=" + storyId + "&page=" + (parseInt(pageNum) - 1);
 };
