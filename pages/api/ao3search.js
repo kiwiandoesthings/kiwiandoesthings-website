@@ -24,7 +24,7 @@ async function searchStory() {
 	Object.entries(json).forEach(([id, info]) => {
         const div = document.createElement('li');
             
-        div.innerHTML = "<a href=\"javascript:void(0)\" onclick=\"viewStory(" + id + ", 0)\">" + info + "</a>";
+        div.innerHTML = "<a href=\"javascript:void(0)\" onclick=\"viewStory(" + id + ", 1)\">" + info + "</a>";
         searchResults.appendChild(div);
     });
 }

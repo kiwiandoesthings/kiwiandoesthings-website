@@ -19,7 +19,7 @@ async function loadStory() {
 		return;
 	}
 	var json = await storyResult.json();
-	storyTitle.innerHTML = json.title + ", Chapter " + (parseInt(json.chapter) + 1);
+	storyTitle.innerHTML = json.title + ", Chapter " + json.chapter;
 	storyView.innerHTML = json.content;
 }
 
