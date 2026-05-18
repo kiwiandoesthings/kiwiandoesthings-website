@@ -11,6 +11,10 @@ body {
   cursor: url('resources/hand.png'), pointer;
 }
 
+a, a:visited, a:hover, a:active {
+	-webkit-text-fill-color: currentColor;
+}
+
 a:link {
   color: #e06fff;
 }
@@ -51,7 +55,9 @@ img {
  	font-size: 24px;
  	font-family: "PixiFontBDF", "PixiFontTTF", "Rockwell", "Arial";
   	-webkit-font-smoothing: none;
-	-moz-osx-font-smoothing: grayscale;
+	-moz-osx-font-smoothing: none;
+	text-rendering: optimizeSpeed;
+	image-rendering: pixelated;
 }
 
 .ao3-text {
@@ -69,21 +75,19 @@ img {
   box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.6);
 }
 
-.input {
+input {
   border: 3px double #e06fff;
   box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.4);
-  background-color: #fffc9c;
+  background-color: #fffc9c !important;
   cursor: text;
   text-align: center;
+  font-size: 24px;
+  font-family: inherit;
 }
 
-.input:focus {
+input:focus {
   border: 3px double #a386fa;
   outline: none;
-  box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.6);
-}
-
-.input:hover {
   box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.6);
 }
 
@@ -173,11 +177,6 @@ img {
 }
 
 @font-face {
-    font-family: 'PixiFontBDF';
-    src: url('resources/PixiFont.bdf') format('bdf');
-}
-
-@font-face {
     font-family: 'PixiFontTTF';
     src: url('resources/PixiFont.ttf') format('truetype');
 }
@@ -236,4 +235,10 @@ th, td {
 .comic-header a {
 	padding: 0px;
 	margin: 0px;
+}
+
+.link-disabled {
+	pointer-events: none;
+	color: grey;
+	text-decoration: none;
 }

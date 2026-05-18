@@ -15,9 +15,11 @@
 			<h3>A Small Warning</h3>
 			<p>This viewer is very basic. If a story uses advanced html or images (idk if ao3 can even do that) it may not display correctly. However, most stories, even those utilizing text formatting, should work pretty fine.</p>
 
-			<div style="text-align: center;">
+			<div class="text" style="text-align: center;">
 				<label for="ao3-story-search">Search for a story: </label>
-				<input id="ao3-story-search" type="text" placeholder="Search for a story"></input>
+				<input id="ao3-story-search" type="text" placeholder="Search for a story">
+				<label for="ao3-story-search-page">Search page: </label>
+				<input id="ao3-story-search-page" min="0" type="number" style="width: 10ch;">
 				<button class="button" id="ao3-search-submit">Search</button>
 				<br>
 			</div>
