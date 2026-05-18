@@ -21,7 +21,7 @@ async function searchStory() {
 		abortController = new AbortController();
     	const { signal } = abortController;
 		var pageValue = pageInput.value;
-		if (Number.isFinite(pageValue)) {
+		if (!Number.isInteger(pageValue)) {
 			pageValue = 0;
 		}
 		var searchResult = await fetch("https://api.kiwiandoesthings.place/getao3storyid?storyTitle=" + searchInput.value + "&page=" + pageValue, {signal});
