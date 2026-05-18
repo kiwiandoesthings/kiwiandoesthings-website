@@ -12,7 +12,7 @@ searchButton.onclick = searchStory;
 
 let abortController = null;
 async function searchStory() {
-	searchResults.innerHTML = "Search results are loading...<br>If it takes more than 20 seconds to load, press the search button again.";
+	searchResults.innerHTML = "Search results are loading...";
 	if (abortController) {
         abortController.abort();
         console.log("Previous fetch canceled.");
