@@ -20,7 +20,11 @@ async function searchStory() {
 	try {
 		abortController = new AbortController();
     	const { signal } = abortController;
-		var searchResult = await fetch("https://api.kiwiandoesthings.place/getao3storyid?storyTitle=" + searchInput.value + "&page=" + pageInput.value, {signal});
+		var pageValue = pageInput.value;
+		if (Number.isFinite(pageValue)) {
+			pageValue = 0;
+		}
+		var searchResult = await fetch("https://api.kiwiandoesthings.place/getao3storyid?storyTitle=" + searchInput.value + "&page=" + pageValue, {signal});
 		if (!searchResult.ok) {
             searchResults.innerHTML = "Failed to fetch search results with error \"" + searchResult.status + "\". Please retry. If the issue persists, message @KiwianDoesThings on Discord with the error message.";
             return; 
