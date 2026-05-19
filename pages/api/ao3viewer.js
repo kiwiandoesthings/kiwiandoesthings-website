@@ -50,5 +50,5 @@ storyDevance.onclick = () => {
 };
 
 pageSubmit.onclick = () => {
-	window.location = "ao3storyviewer.html?storyID=" + storyId + "&page=" + (parseInt(pageSubmit.value));
+	window.location = "ao3storyviewer.html?storyID=" + storyId + "&page=" + (parseInt(pageInput.value) - 1);
 }
