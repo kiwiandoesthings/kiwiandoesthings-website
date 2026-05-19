@@ -49,7 +49,7 @@ async function searchStory() {
 	json.forEach((work) => {
         const div = document.createElement('li');
             
-        div.innerHTML = "<a href=\"javascript:void(0)\" onclick=\"viewStory(" + work.id + ", 0)\">" + work.info + "</a>";
+        div.innerHTML = "<a href=\"javascript:void(0)\" target=\"_blank\" onclick=\"viewStory(" + work.id + ", 0)\">" + work.info + "</a>";
         searchResults.appendChild(div);
     });
 }
