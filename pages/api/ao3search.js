@@ -28,7 +28,7 @@ async function searchStory() {
 		var searchResult = await fetch("https://api.kiwiandoesthings.place/getao3storyid?storyTitle=" + searchInput.value + "&page=" + pageValue, {signal});
 		if (!searchResult.ok) {
             searchResults.innerHTML = "Failed to fetch search results with error \"" + searchResult.status + "\". Please retry. If the issue persists, message @KiwianDoesThings on Discord with the error message.";
-            return; 
+            return; //ok
         }
 	} catch (error) {
 		if (error.name === 'AbortError') {
