@@ -17,6 +17,9 @@ async function searchStory() {
         abortController.abort();
         console.log("Previous fetch canceled.");
     }
+
+	var searchResult;
+
 	try {
 		abortController = new AbortController();
     	const { signal } = abortController;
@@ -25,17 +28,24 @@ async function searchStory() {
 			pageValue = 1;
 			pageInput.value = 1;
 		}
-		var searchResult = await fetch("https://api.kiwiandoesthings.place/getao3storyid?storyTitle=" + searchInput.value + "&page=" + pageValue, {signal});
+		searchResult = await fetch("https://api.kiwiandoesthings.place/getao3storyid?storyTitle=" + searchInput.value + "&page=" + pageValue, {signal});
+		console.log(searchResult.status);
 		if (!searchResult.ok) {
+			if (searchResult.status === 404 || searchResult.status === 502) {
+				searchResults.innerHTML = "My computer is off!!! Sorry!!! If it's outside of school hours, feel free to message me to tell me to turn it back on, thanks.";
+				return;
+			}
             searchResults.innerHTML = "Failed to fetch search results with error \"" + searchResult.status + "\". Please retry. If the issue persists, message @KiwianDoesThings on Discord with the error message.";
-            return; //ok
+            return;
         }
 	} catch (error) {
 		if (error.name === 'AbortError') {
             return;
-        }
-
-		searchResults.innerHTML = "Failed to fetch search results with error \"" + error + "\". Please retry. If the issue persists, message @KiwianDoesThings on Discord with the error message.";
+        } else if (error instanceof TypeError) {
+			searchResults.innerHTML = "My computer is off!!! Sorry!!! If it's outside of school hours, feel free to message me to tell me to turn it back on, thanks.";
+		} else {
+			searchResults.innerHTML = "Failed to fetch search results with error \"" + error + "\". Please retry. If the issue persists, message @KiwianDoesThings on Discord with the error message.";
+		}
 		return;
 	}
 	var json = await searchResult.json();

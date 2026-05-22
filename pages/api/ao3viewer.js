@@ -13,11 +13,19 @@ async function loadStory() {
 	try {
 		var storyResult = await fetch("https://api.kiwiandoesthings.place/getao3text?storyID=" + storyId + "&page=" + pageNum);
 		if (!storyResult.ok) {
-			storyView.innerHTML = "Failed to fetch story text with error \"" + storyResult.status + "\". Please reload the page. If the issue persists, message @KiwianDoesThings on Discord with the error message.";
+			if (storyResult.status === 404 || storyResult.status === 502) {
+				searchResults.innerHTML = "My computer is off!!! Sorry!!! If it's outside of school hours, feel free to message me to tell me to turn it back on, thanks.";
+			} else {
+				storyView.innerHTML = "Failed to fetch story text with error \"" + storyResult.status + "\". Please reload the page. If the issue persists, message @KiwianDoesThings on Discord with the error message.";
+			}
 			return;
 		}
 	} catch (error) {
-		storyView.innerHTML = "Failed to fetch story text with error \"" + error + "\". Please reload the page. If the issue persists, message @KiwianDoesThings on Discord with the error message.";
+		if (error instanceof TypeError) {
+			searchResults.innerHTML = "My computer is off!!! Sorry!!! If it's outside of school hours, feel free to message me to tell me to turn it back on, thanks.";
+		} else {
+			storyView.innerHTML = "Failed to fetch story text with error \"" + error + "\". Please reload the page. If the issue persists, message @KiwianDoesThings on Discord with the error message.";
+		}
 		return;
 	}
 	var json = await storyResult.json();
