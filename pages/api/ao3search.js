@@ -65,5 +65,5 @@ async function searchStory() {
 }
 
 function viewStory(id, page) {
-	window.location = "ao3storyviewer.html?storyID=" + id + "&page=" + page;
+	window.open("ao3storyviewer.html?storyID=" + id + "&page=" + page, "_blank");
 }
