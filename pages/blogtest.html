@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Kiwian's Site!! - BlogTest</title>
+		<link rel="icon" href="/resources/pixian_icon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="/styles.css">
+	</head>
+	<body style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; margin: 0;">
+		<div class="container">
+			<div id="navbar">
+				<a class="text nav-button button" href="home.html">Home</a>
+				<a class="text nav-button button" href="about_me.html">About Me</a>
+				<a class="text nav-button button" href="links.html">Links</a>
+				<a class="text nav-button button" href="art.html">Art</a>
+				<a class="text nav-button button" href="projects.html">Projects</a>
+				<a class="text nav-button button" href="log.html">Log</a>
+				<a class="text nav-button button nav-selected" href="blogtest.html">!! BLOGTEST !!</a>
+			</div>
+
+			<div id="blog-container" class="text container">
+				<p>
+					This is a test page for my new project, KiwiBlog. It's a small blogging platform. You post blogs on the KiwiBlog website, and then embed a small string into your website, which will load your latest blogs dynamically.
+				</p>
+
+				<script src="https://test.kiwiandoesthings.place/scripts/common.js"></script><script src="https://test.kiwiandoesthings.place/scripts/blog_functions.js"></script><script src="https://test.kiwiandoesthings.place/scripts/home_blog.js"></script><script src="https://test.kiwiandoesthings.place/scripts/embed_loader.js"></script>
+				<script>
+					initialize({
+						stylesheet: "/blog_styles.css",
+						blogID: "3f811e7b-b9d3-4455-99bd-d6f082b52aff",
+						containerID: "blog-container"
+					});
+				</script>
+			</div>
+			<a href="https://status.cafe/users/kiwian"><img src="https://status.cafe/users/kiwian/badge.png" alt="Status Cafe Profile"/></a>
+		</div>
+	</body>
+</html>

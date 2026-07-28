@@ -1,0 +1,43 @@
+.blog-post {
+	display: flex;
+	flex-direction: column;
+	background-color: lightgrey;
+	margin-bottom: 15px;
+	padding: 5px;
+}
+
+.blog-header {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	background-color: grey;
+	padding: 5px;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+
+.blog-header > p {
+	margin: 0px;
+}
+
+.blog-body {
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+	padding: 5px;
+	box-sizing: border-box;
+	margin: 0px;
+}
+
+.blog-body > * {
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+.blog-body > *:first-child {
+    margin-top: 0;
+}
+
+.blog-body > *:last-child {
+    margin-bottom: 0;
+}
