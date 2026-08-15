@@ -5,6 +5,7 @@ body {
     image-rendering: pixelated;
     cursor: url('resources/pointer.png'), default;
 	-webkit-font-smoothing: none;
+	margin: 15px;
 }
 
 .nav-button, .button, a, a:-webkit-any-link {
