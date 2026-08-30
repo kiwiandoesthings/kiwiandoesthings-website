@@ -10,8 +10,14 @@ var storyId = urlParams.get('storyID');
 var pageNum = urlParams.get('page');
 
 async function loadStory() {
+	var slowLoadTimer = setTimeout(() => {
+        storyView.innerHTML = "Hold on... it's taking a bit to load this one.";
+    }, 10000);
+
 	try {
 		var storyResult = await fetch("https://api.kiwiandoesthings.place/getao3text?storyID=" + storyId + "&page=" + pageNum);
+
+		clearTimeout(slowLoadTimer);
 		if (!storyResult.ok) {
 			if (storyResult.status === 404 || storyResult.status === 502) {
 				searchResults.innerHTML = "My computer is off!!! Sorry!!! If it's outside of school hours, feel free to message me to tell me to turn it back on, thanks.";
@@ -21,6 +27,7 @@ async function loadStory() {
 			return;
 		}
 	} catch (error) {
+		clearTimeout(slowLoadTimer);
 		if (error instanceof TypeError) {
 			searchResults.innerHTML = "My computer is off!!! Sorry!!! If it's outside of school hours, feel free to message me to tell me to turn it back on, thanks.";
 		} else {
@@ -29,6 +36,18 @@ async function loadStory() {
 		return;
 	}
 	var json = await storyResult.json();
+	if (json.error != undefined) {
+		storyTitle.innerHTML = "Error Encountered";
+		if (json.error === "list index out of range") {
+			storyView.innerHTML = "This story does not have the chapter you navigated to.";
+			return;
+		} else {
+			storyView.innerHTML = "Encountered an unknown error. Please send this to me to get the issue fixed: \"" + json.error + "\"";
+		}
+
+		return;
+	}
+
 	storyTitle.innerHTML = json.title + ", Chapter " + json.chapter;
 	storyView.innerHTML = json.content;
 	if (json.chapterCount == json.chapter) {
