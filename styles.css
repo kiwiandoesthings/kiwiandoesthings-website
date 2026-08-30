@@ -61,6 +61,10 @@ img {
 	image-rendering: pixelated;
 }
 
+#ao3-story-view {
+	word-wrap: break-word;
+}
+
 .ao3-text {
 	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Helvetica, sans-serif, "GNU Unifont"
 }
