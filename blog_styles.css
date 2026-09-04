@@ -156,11 +156,11 @@ footer {
 }
 
 .blog-title {
-	font-size: 20pt;
+	font-size: 30pt;
 }
 
 .blog-date {
-	font-size: 12pt;
+	font-size: 15pt;
 }
 
 .blog-body {
@@ -174,11 +174,11 @@ footer {
 .blog-body > * {
     margin-top: 0.4em;
     margin-bottom: 0.4em;
-	font-size: 16pt;
+	font-size: 20pt;
 }
 
 .blog-summary > * {
-	font-size: 16pt;
+	font-size: 20pt;
 }
 
 .blog-body > *:first-child {

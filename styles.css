@@ -46,6 +46,10 @@ img {
 	max-width: 95vw;
 }
 
+.container:has(.container) {
+	background-color: #fffc9c80;
+}
+
 .sub-container {
 	background-color: #fffc9c;
 	max-width: 95%;
@@ -53,7 +57,7 @@ img {
 
 .text {
 	margin: 10px 10px;
- 	font-size: 24px;
+ 	font-size: 35px;
  	font-family: "PixiFontBDF", "PixiFontTTF", "Rockwell", "Arial";
   	-webkit-font-smoothing: none;
 	-moz-osx-font-smoothing: none;
@@ -128,7 +132,7 @@ input:focus {
   	background: linear-gradient(to top left, #42fda6, #4fa5a8);
   	width: 15vw;
   	padding: 10px 0px;
-  	font-size: clamp(16px, 2vw, 32px);
+  	font-size: clamp(40px, 2vw, 50px);
   	text-decoration: none;
   	text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
   	flex-shrink: 1;
@@ -143,14 +147,14 @@ input:focus {
 
 .blog-title {
   	text-align: center;
-  	font-size: 32px;
+  	font-size: 40px;
   	margin: 0px 4px;
 }
 
 .blog-date {
   	text-align: right;
   	margin: 0px 0px;
-  	font-size: 16px;
+  	font-size: 25px;
 }
 
 #banner-container {
