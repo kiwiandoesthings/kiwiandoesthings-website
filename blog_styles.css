@@ -32,10 +32,6 @@ button, input, select, textarea {
     font-family: "MS PGothic", Tahoma, Verdana;
 }
 
-p, a, label, button {
-	font-size: 20pt;
-}
-
 main {
 	flex: 1;
 	display: flex;
@@ -131,7 +127,9 @@ footer {
 .blog-post {
 	display: flex;
 	flex-direction: column;
-	background-color: lightgrey;
+	border: 3px double #e06fff;
+	box-shadow: 6px 6px 0px 0px rgba(0, 0, 0, 0.6);
+	background-color: #fffc9c;
 	margin-bottom: 15px;
 	padding: 5px;
 }
@@ -147,7 +145,6 @@ footer {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	background-color: grey;
 	padding: 5px;
 	box-sizing: border-box;
 	margin-bottom: 10px;

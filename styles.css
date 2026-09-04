@@ -183,7 +183,7 @@ input:focus {
 
 @font-face {
     font-family: 'PixiFontTTF';
-    src: url('resources/PixiFont.ttf') format('truetype');
+    src: url('resources/PixiFontv2.ttf') format('truetype');
 }
 
 table {
